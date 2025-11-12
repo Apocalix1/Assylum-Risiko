@@ -2,21 +2,23 @@
 #include "Classi.h"
 #include "Libreria.h"
 
-int main()
-{
-    int punti_da_spendere = 30;
-    Personaggio Personaggio;
-    Personaggio.forza = 6;
-    Personaggio.destrezza = 6;
-    Personaggio.costituzione = 6;
-    Personaggio.intelligenza = 6;
-    Personaggio.saggezza = 6;
-    Personaggio.carisma = 6;
-    Personaggio.calcolo_modificatori();
-    Personaggio.velocita = 9;
-    Personaggio.CA = 10 + Personaggio.modificatori[Personaggio.DESTREZZA];
 
-    spendere_punti(Personaggio, punti_da_spendere);
+int main() {
+    Party party1;
+
+    // Crea il party completo con nomi e punti da spendere
+    party1.creaPartyCompleto();
+
+    cout << "\nMembri e statistiche del party " << party1.nomeParty << ":\n";
+    party1.stampaStatistiche();
+
+    Party party2;
+
+    // Crea il party completo con nomi e punti da spendere
+    party2.creaPartyCompleto();
+
+    cout << "\nMembri e statistiche del party " << party2.nomeParty << ":\n";
+    party2.stampaStatistiche();
 
     return 0;
 }
